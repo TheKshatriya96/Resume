@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swapnil Santosh Pawar - Lead Motion Graphics Artist</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .code-font {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        
+        :root {
+            --bg-dark: #1e1e1e;
+            --bg-darker: #0d1117;
+            --bg-card: #252526;
+            --bg-lighter: #2d2d30;
+            --python-blue: #569cd6;
+            --python-green: #4ec9b0;
+            --python-yellow: #dcdcaa;
+            --python-orange: #ce9178;
+            --python-purple: #c586c0;
+            --python-red: #f44747;
+            --python-comment: #6a9955;
+            --python-string: #ce9178;
+            --text-primary: #d4d4d4;
+            --text-secondary: #9cdcfe;
+            --text-muted: #808080;
+        }
+        
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+        }
+        
+        .python-gradient {
+            background: linear-gradient(135deg, var(--python-blue) 0%, var(--python-green) 100%);
+        }
+        
+        .python-gradient-text {
+            background: linear-gradient(135deg, var(--python-blue) 0%, var(--python-green) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+            background-color: var(--bg-card);
+            border: 1px solid #3e3e42;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            border-color: var(--python-blue);
+        }
+        
+        .skill-tag {
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+        
+        .skill-tag:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+        
+        .skill-design { background-color: var(--python-blue); }
+        .skill-ai { background-color: var(--python-green); }
+        .skill-platform { background-color: var(--python-yellow); color: var(--bg-dark); }
+        .skill-soft { background-color: var(--python-purple); }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .slide-in {
+            animation: slideIn 0.8s ease-out;
+        }
+        
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        .floating {
+            animation: floating 6s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .navbar-scroll {
+            backdrop-filter: blur(20px);
+            background: rgba(30, 30, 30, 0.9);
+            border-bottom: 1px solid #3e3e42;
+        }
+        
+        .code-block {
+            background: var(--bg-darker);
+            border: 1px solid #3e3e42;
+            border-radius: 8px;
+            padding: 1rem;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        
+        .syntax-keyword { color: var(--python-blue); }
+        .syntax-string { color: var(--python-string); }
+        .syntax-comment { color: var(--python-comment); }
+        .syntax-function { color: var(--python-yellow); }
+        .syntax-variable { color: var(--python-green); }
+        
+        .timeline-line {
+            background: linear-gradient(to bottom, var(--python-blue), var(--python-green));
+        }
+        
+        .btn-primary {
+            background: var(--python-blue);
+            border: 1px solid var(--python-blue);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background: var(--python-green);
+            border-color: var(--python-green);
+            box-shadow: 0 0 20px rgba(78, 201, 176, 0.3);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            border: 1px solid var(--python-blue);
+            color: var(--python-blue);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background: var(--python-blue);
+            color: white;
+            box-shadow: 0 0 20px rgba(86, 156, 214, 0.3);
+        }
+        
+        .glow-effect {
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glow {
+            from { box-shadow: 0 0 10px rgba(78, 201, 176, 0.3); }
+            to { box-shadow: 0 0 30px rgba(78, 201, 176, 0.6); }
+        }
+        
+        .terminal-window {
+            background: var(--bg-darker);
+            border: 1px solid #3e3e42;
+            border-radius: 8px;
+            position: relative;
+        }
+        
+        .terminal-header {
+            background: var(--bg-lighter);
+            padding: 0.5rem 1rem;
+            border-bottom: 1px solid #3e3e42;
+            border-radius: 8px 8px 0 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .terminal-dots {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .terminal-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        
+        .dot-red { background: var(--python-red); }
+        .dot-yellow { background: var(--python-yellow); }
+        .dot-green { background: var(--python-green); }
+        
+        .input-field {
+            background: var(--bg-card);
+            border: 1px solid #3e3e42;
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+        
+        .input-field:focus {
+            outline: none;
+            border-color: var(--python-blue);
+            box-shadow: 0 0 0 3px rgba(86, 156, 214, 0.1);
+        }
+        
+        .social-icon {
+            background: var(--bg-card);
+            border: 1px solid #3e3e42;
+            color: var(--text-secondary);
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            background: var(--python-blue);
+            color: white;
+            box-shadow: 0 0 20px rgba(86, 156, 214, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 py-4 transition-all duration-300">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-between items-center">
+                <h1 class="text-2xl font-bold python-gradient-text code-font">{'SP'}</h1>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="hover:text-blue-400 transition-colors code-font"># home</a>
+                    <a href="#about" class="hover:text-blue-400 transition-colors code-font"># about</a>
+                    <a href="#skills" class="hover:text-blue-400 transition-colors code-font"># skills</a>
+                    <a href="#experience" class="hover:text-blue-400 transition-colors code-font"># experience</a>
+                    <a href="#projects" class="hover:text-blue-400 transition-colors code-font"># projects</a>
+                    <a href="#education" class="hover:text-blue-400 transition-colors code-font"># education</a>
+                    <a href="#contact" class="hover:text-blue-400 transition-colors code-font"># contact</a>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <div class="terminal-dots">
+                        <div class="terminal-dot dot-red"></div>
+                        <div class="terminal-dot dot-yellow"></div>
+                        <div class="terminal-dot dot-green"></div>
+                    </div>
+                </div>
+                <button class="md:hidden text-blue-400">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center python-gradient">
+        <div class="container mx-auto px-6 py-20">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6 fade-in">
+                    <div class="code-block">
+                        <div class="syntax-comment"># Lead Motion Graphics Artist</div>
+                        <div class="mt-2">
+                            <span class="syntax-keyword">class</span> 
+                            <span class="syntax-function">SwapnilPawar</span>():
+                        </div>
+                        <div class="ml-4 mt-1">
+                            <span class="syntax-keyword">def</span> 
+                            <span class="syntax-function">__init__</span>(self):
+                        </div>
+                        <div class="ml-8 space-y-1">
+                            <div>self.name = <span class="syntax-string">"Swapnil Santosh Pawar"</span></div>
+                            <div>self.role = <span class="syntax-string">"Lead Motion Graphics Artist"</span></div>
+                            <div>self.location = <span class="syntax-string">"Mumbai, India"</span></div>
+                            <div>self.experience = <span class="syntax-string">"10+ years"</span></div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-3xl font-light text-white">
+                        <span class="syntax-comment"># "Designing motion with precision, speed, and soul."</span>
+                    </div>
+                    
+                    <div class="flex space-x-4 pt-4">
+                        <a href="#" class="social-icon p-3 rounded-lg hover:bg-blue-600 transition-colors">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="social-icon p-3 rounded-lg hover:bg-pink-600 transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-icon p-3 rounded-lg hover:bg-red-600 transition-colors">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <div class="social-icon p-3 rounded-lg">
+                            <i class="fas fa-qrcode"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="floating">
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <div class="terminal-dots">
+                                <div class="terminal-dot dot-red"></div>
+                                <div class="terminal-dot dot-yellow"></div>
+                                <div class="terminal-dot dot-green"></div>
+                            </div>
+                            <span class="ml-4 text-sm text-gray-400 code-font">ktm_campaign.py</span>
+                    </div>
+                    <div class="p-8">
+                        <div class="grid lg:grid-cols-2 gap-8 items-center">
+                            <div>
+                                <div class="code-font text-sm space-y-2 mb-4">
+                                    <div class="syntax-comment"># Project: KTM India Campaign</div>
+                                    <div><span class="syntax-variable">project_name</span> = <span class="syntax-string">"KTM India Campaign"</span></div>
+                                    <div><span class="syntax-variable">tech_stack</span> = [<span class="syntax-string">"After Effects"</span>, <span class="syntax-string">"AI"</span>, <span class="syntax-string">"Automation"</span>]</div>
+                                    <div><span class="syntax-variable">efficiency_gain</span> = <span class="syntax-string">"40% reduction"</span></div>
+                                </div>
+                                <p class="text-gray-300 mb-6">
+                                    Created After Effects render automation tool, blending AI + keyframing. Reduced post-production time by 40%.
+                                </p>
+                                <div class="flex space-x-4">
+                                    <button class="btn-primary text-white px-6 py-3 rounded-lg transition-colors">
+                                        <i class="fab fa-youtube mr-2"></i>Watch Video
+                                    </button>
+                                    <button class="btn-secondary px-6 py-3 rounded-lg transition-colors">
+                                        Learn More
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="terminal-window">
+                                <div class="terminal-header">
+                                    <div class="terminal-dots">
+                                        <div class="terminal-dot dot-red"></div>
+                                        <div class="terminal-dot dot-yellow"></div>
+                                        <div class="terminal-dot dot-green"></div>
+                                    </div>
+                                    <span class="ml-4 text-sm text-gray-400 code-font">demo.mp4</span>
+                                </div>
+                                <div class="bg-gradient-to-br from-blue-500 to-green-400 h-64 flex items-center justify-center glow-effect">
+                                    <i class="fas fa-play text-6xl text-white"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-8">
+                <div class="text-2xl python-gradient-text code-font">]</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-20" style="background-color: var(--bg-dark);">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 python-gradient-text code-font">education_timeline = {</h2>
+            <div class="max-w-4xl mx-auto space-y-6">
+                <div class="terminal-window card-hover">
+                    <div class="terminal-header">
+                        <div class="terminal-dots">
+                            <div class="terminal-dot dot-red"></div>
+                            <div class="terminal-dot dot-yellow"></div>
+                            <div class="terminal-dot dot-green"></div>
+                        </div>
+                        <span class="ml-4 text-sm text-gray-400 code-font">cybersecurity.py</span>
+                    </div>
+                    <div class="p-6 flex items-center">
+                        <div class="w-16 h-16 bg-blue-900 rounded-lg flex items-center justify-center mr-6">
+                            <i class="fas fa-shield-alt text-blue-400 text-xl"></i>
+                        </div>
+                        <div class="flex-1 code-font">
+                            <div class="text-sm syntax-comment"># 2023</div>
+                            <h3 class="text-lg font-semibold text-blue-400">Google Cybersecurity Certificate</h3>
+                            <p class="text-gray-400">Coursera</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="terminal-window card-hover">
+                    <div class="terminal-header">
+                        <div class="terminal-dots">
+                            <div class="terminal-dot dot-red"></div>
+                            <div class="terminal-dot dot-yellow"></div>
+                            <div class="terminal-dot dot-green"></div>
+                        </div>
+                        <span class="ml-4 text-sm text-gray-400 code-font">bachelor_degree.py</span>
+                    </div>
+                    <div class="p-6 flex items-center">
+                        <div class="w-16 h-16 bg-green-900 rounded-lg flex items-center justify-center mr-6">
+                            <i class="fas fa-graduation-cap text-green-400 text-xl"></i>
+                        </div>
+                        <div class="flex-1 code-font">
+                            <div class="text-sm syntax-comment"># 2018</div>
+                            <h3 class="text-lg font-semibold text-green-400">BA in Economics & Psychology</h3>
+                            <p class="text-gray-400">Mumbai University</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="terminal-window card-hover">
+                    <div class="terminal-header">
+                        <div class="terminal-dots">
+                            <div class="terminal-dot dot-red"></div>
+                            <div class="terminal-dot dot-yellow"></div>
+                            <div class="terminal-dot dot-green"></div>
+                        </div>
+                        <span class="ml-4 text-sm text-gray-400 code-font">vfx_course.py</span>
+                    </div>
+                    <div class="p-6 flex items-center">
+                        <div class="w-16 h-16 bg-purple-900 rounded-lg flex items-center justify-center mr-6">
+                            <i class="fas fa-magic text-purple-400 text-xl"></i>
+                        </div>
+                        <div class="flex-1 code-font">
+                            <div class="text-sm syntax-comment"># 2015</div>
+                            <h3 class="text-lg font-semibold text-purple-400">VFX & Digital Painting</h3>
+                            <p class="text-gray-400">FX School</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="terminal-window card-hover">
+                    <div class="terminal-header">
+                        <div class="terminal-dots">
+                            <div class="terminal-dot dot-red"></div>
+                            <div class="terminal-dot dot-yellow"></div>
+                            <div class="terminal-dot dot-green"></div>
+                        </div>
+                        <span class="ml-4 text-sm text-gray-400 code-font">hsc.py</span>
+                    </div>
+                    <div class="p-6 flex items-center">
+                        <div class="w-16 h-16 bg-yellow-900 rounded-lg flex items-center justify-center mr-6">
+                            <i class="fas fa-school text-yellow-400 text-xl"></i>
+                        </div>
+                        <div class="flex-1 code-font">
+                            <div class="text-sm syntax-comment"># 2012</div>
+                            <h3 class="text-lg font-semibold text-yellow-400">HSC (Science)</h3>
+                            <p class="text-gray-400">Bhavan's College</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="terminal-window card-hover">
+                    <div class="terminal-header">
+                        <div class="terminal-dots">
+                            <div class="terminal-dot dot-red"></div>
+                            <div class="terminal-dot dot-yellow"></div>
+                            <div class="terminal-dot dot-green"></div>
+                        </div>
+                        <span class="ml-4 text-sm text-gray-400 code-font">ssc.py</span>
+                    </div>
+                    <div class="p-6 flex items-center">
+                        <div class="w-16 h-16 bg-orange-900 rounded-lg flex items-center justify-center mr-6">
+                            <i class="fas fa-school text-orange-400 text-xl"></i>
+                        </div>
+                        <div class="flex-1 code-font">
+                            <div class="text-sm syntax-comment"># 2010</div>
+                            <h3 class="text-lg font-semibold text-orange-400">SSC</h3>
+                            <p class="text-gray-400">Sir J. J. Fort Boys' High School</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-8">
+                <div class="text-2xl python-gradient-text code-font">}</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20" style="background-color: var(--bg-darker);">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 python-gradient-text code-font">def contact_me():</h2>
+            <div class="max-w-4xl mx-auto grid lg:grid-cols-2 gap-12">
+                <div class="space-y-6">
+                    <div class="terminal-window card-hover">
+                        <div class="terminal-header">
+                            <div class="terminal-dots">
+                                <div class="terminal-dot dot-red"></div>
+                                <div class="terminal-dot dot-yellow"></div>
+                                <div class="terminal-dot dot-green"></div>
+                            </div>
+                            <span class="ml-4 text-sm text-gray-400 code-font">contact_info.py</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-4 text-blue-400 code-font">contact_details = {</h3>
+                            <div class="space-y-4 code-font text-sm">
+                                <div class="flex items-center">
+                                    <i class="fas fa-map-marker-alt text-green-400 mr-4"></i>
+                                    <span><span class="syntax-string">"location"</span>: <span class="syntax-string">"Chh. Shivaji Maharaj Terminus, Fort, Mumbai"</span></span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-phone text-blue-400 mr-4"></i>
+                                    <span><span class="syntax-string">"phone"</span>: <span class="syntax-string">"+91 89698 23308"</span></span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-envelope text-purple-400 mr-4"></i>
+                                    <span><span class="syntax-string">"email"</span>: <span class="syntax-string">"swaraje.maratha@gmail.com"</span></span>
+                                </div>
+                            </div>
+                            <div class="mt-4 text-blue-400 code-font">}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="terminal-window card-hover">
+                    <div class="terminal-header">
+                        <div class="terminal-dots">
+                            <div class="terminal-dot dot-red"></div>
+                            <div class="terminal-dot dot-yellow"></div>
+                            <div class="terminal-dot dot-green"></div>
+                        </div>
+                        <span class="ml-4 text-sm text-gray-400 code-font">send_message.py</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-4 text-green-400 code-font">send_message() {</h3>
+                        <form class="space-y-4">
+                            <input type="text" placeholder="your_name = ''" class="w-full p-3 input-field rounded-lg code-font">
+                            <input type="email" placeholder="your_email = ''" class="w-full p-3 input-field rounded-lg code-font">
+                            <textarea placeholder="message = '''" rows="5" class="w-full p-3 input-field rounded-lg code-font"></textarea>
+                            <button type="submit" class="w-full btn-primary text-white py-3 rounded-lg code-font">
+                                execute_send()
+                            </button>
+                        </form>
+                        <div class="mt-4 text-green-400 code-font">}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background-color: var(--bg-dark);" class="py-12 border-t border-gray-700">
+        <div class="container mx-auto px-6">
+            <div class="text-center">
+                <div class="code-font text-sm mb-4 syntax-comment">
+                    # © 2025 Swapnil Pawar. All rights reserved.
+                </div>
+                <div class="flex justify-center space-x-6 text-gray-400 text-sm">
+                    <span class="flex items-center code-font">
+                        <i class="fas fa-pencil-alt mr-2 text-blue-400"></i>
+                        <span class="syntax-string">"sketching"</span>
+                    </span>
+                    <span class="flex items-center code-font">
+                        <i class="fas fa-music mr-2 text-green-400"></i>
+                        <span class="syntax-string">"music"</span>
+                    </span>
+                    <span class="flex items-center code-font">
+                        <i class="fas fa-landmark mr-2 text-yellow-400"></i>
+                        <span class="syntax-string">"history"</span>
+                    </span>
+                    <span class="flex items-center code-font">
+                        <i class="fas fa-pray mr-2 text-purple-400"></i>
+                        <span class="syntax-string">"spiritual_learning"</span>
+                    </span>
+                    <span class="flex items-center code-font">
+                        <i class="fas fa-atom mr-2 text-orange-400"></i>
+                        <span class="syntax-string">"science"</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('navbar-scroll');
+            } else {
+                navbar.classList.remove('navbar-scroll');
+            }
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Form submission
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Python-style success message
+            const successDiv = document.createElement('div');
+            successDiv.className = 'mt-4 p-4 bg-green-900 border border-green-600 rounded-lg code-font text-sm text-green-300';
+            successDiv.innerHTML = `
+                <div class="syntax-comment"># Message sent successfully!</div>
+                <div><span class="syntax-keyword">print</span>(<span class="syntax-string">"Thank you! I will get back to you soon."</span>)</div>
+            `;
+            
+            this.appendChild(successDiv);
+            this.reset();
+            
+            setTimeout(() => {
+                successDiv.remove();
+            }, 5000);
+        });
+
+        // Add typing effect to hero section
+        const heroCode = document.querySelector('.code-block');
+        if (heroCode) {
+            heroCode.style.opacity = '0';
+            setTimeout(() => {
+                heroCode.style.opacity = '1';
+                heroCode.style.animation = 'fadeIn 1.5s ease-out';
+            }, 500);
+        }
+
+        // Random code snippets for decoration (optional)
+        const codeSnippets = [
+            '# Designing motion with precision',
+            '# 10+ years of experience',
+            '# AI-driven creative workflows',
+            '# Leading teams to success'
+        ];
+
+        // Add some interactive elements
+        document.querySelectorAll('.skill-tag').forEach(tag => {
+            tag.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.05) rotate(1deg)';
+            });
+            
+            tag.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1) rotate(0deg)';
+            });
+        });
+
+        // Terminal cursor effect
+        const terminalElements = document.querySelectorAll('.terminal-window');
+        terminalElements.forEach(terminal => {
+            terminal.addEventListener('mouseenter', function() {
+                this.style.borderColor = 'var(--python-blue)';
+            });
+            
+            terminal.addEventListener('mouseleave', function() {
+                this.style.borderColor = '#3e3e42';
+            });
+        });
+    </script>
+</body>
+</html>showreel.py</span>
+                        </div>
+                        <div class="p-8 text-center">
+                            <div class="w-48 h-48 bg-gradient-to-br from-blue-500 to-green-400 rounded-2xl mx-auto mb-6 flex items-center justify-center glow-effect">
+                                <i class="fas fa-play text-6xl text-white"></i>
+                            </div>
+                            <div class="code-font text-green-400">
+                                <span class="syntax-keyword">print</span>(<span class="syntax-string">"Watch My Showreel"</span>)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20" style="background-color: var(--bg-dark);">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl font-bold mb-8 python-gradient-text code-font">def about_me():</h2>
+                <div class="terminal-window">
+                    <div class="terminal-header">
+                        <div class="terminal-dots">
+                            <div class="terminal-dot dot-red"></div>
+                            <div class="terminal-dot dot-yellow"></div>
+                            <div class="terminal-dot dot-green"></div>
+                        </div>
+                        <span class="ml-4 text-sm text-gray-400 code-font">about.py</span>
+                    </div>
+                    <div class="p-8 slide-in">
+                        <div class="code-font text-sm space-y-2">
+                            <div class="syntax-comment"># Professional Summary</div>
+                            <div><span class="syntax-variable">experience</span> = <span class="syntax-string">"10+ years"</span></div>
+                            <div><span class="syntax-variable">brands</span> = [<span class="syntax-string">"Godrej"</span>, <span class="syntax-string">"GOQii"</span>, <span class="syntax-string">"KTM"</span>, <span class="syntax-string">"Jalesh Cruises"</span>, <span class="syntax-string">"ICICI Lombard"</span>]</div>
+                            <div><span class="syntax-variable">specialization</span> = <span class="syntax-string">"Motion Graphics + AI Automation"</span></div>
+                            <div class="mt-4 text-gray-300 leading-relaxed">
+                                Creative and technically versatile Motion Graphics Lead with 10+ years of experience crafting high-impact visuals for major brands. Known for combining creative excellence with automation, I lead teams to deliver faster, smarter, and sharper content using After Effects, Excel VBA, ChatGPT, Runway, and more. I focus on quality, efficient workflows, and learning to the core, ensuring creativity never compromises delivery.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20" style="background-color: var(--bg-darker);">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 python-gradient-text code-font">skills = {</h2>
+            <div class="grid lg:grid-cols-2 gap-8">
+                <div class="space-y-6">
+                    <div class="terminal-window card-hover">
+                        <div class="terminal-header">
+                            <div class="terminal-dots">
+                                <div class="terminal-dot dot-red"></div>
+                                <div class="terminal-dot dot-yellow"></div>
+                                <div class="terminal-dot dot-green"></div>
+                            </div>
+                            <span class="ml-4 text-sm text-gray-400 code-font">design_tools.py</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-4 text-blue-400 code-font">"design_tools": [</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-tag skill-design text-white px-4 py-2 rounded-lg text-sm code-font">"After Effects"</span>
+                                <span class="skill-tag skill-design text-white px-4 py-2 rounded-lg text-sm code-font">"Premiere Pro"</span>
+                                <span class="skill-tag skill-design text-white px-4 py-2 rounded-lg text-sm code-font">"Illustrator"</span>
+                                <span class="skill-tag skill-design text-white px-4 py-2 rounded-lg text-sm code-font">"Photoshop"</span>
+                                <span class="skill-tag skill-design text-white px-4 py-2 rounded-lg text-sm code-font">"Blender"</span>
+                                <span class="skill-tag skill-design text-white px-4 py-2 rounded-lg text-sm code-font">"Boris FX"</span>
+                                <span class="skill-tag skill-design text-white px-4 py-2 rounded-lg text-sm code-font">"Element 3D"</span>
+                            </div>
+                            <div class="mt-2 text-blue-400 code-font">]</div>
+                        </div>
+                    </div>
+                    <div class="terminal-window card-hover">
+                        <div class="terminal-header">
+                            <div class="terminal-dots">
+                                <div class="terminal-dot dot-red"></div>
+                                <div class="terminal-dot dot-yellow"></div>
+                                <div class="terminal-dot dot-green"></div>
+                            </div>
+                            <span class="ml-4 text-sm text-gray-400 code-font">ai_automation.py</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-4 text-green-400 code-font">"ai_automation": [</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-tag skill-ai text-white px-4 py-2 rounded-lg text-sm code-font">"Excel VBA"</span>
+                                <span class="skill-tag skill-ai text-white px-4 py-2 rounded-lg text-sm code-font">"PowerShell"</span>
+                                <span class="skill-tag skill-ai text-white px-4 py-2 rounded-lg text-sm code-font">"Runway"</span>
+                                <span class="skill-tag skill-ai text-white px-4 py-2 rounded-lg text-sm code-font">"ChatGPT"</span>
+                                <span class="skill-tag skill-ai text-white px-4 py-2 rounded-lg text-sm code-font">"Gemini"</span>
+                                <span class="skill-tag skill-ai text-white px-4 py-2 rounded-lg text-sm code-font">"Perplexity"</span>
+                            </div>
+                            <div class="mt-2 text-green-400 code-font">]</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <div class="terminal-window card-hover">
+                        <div class="terminal-header">
+                            <div class="terminal-dots">
+                                <div class="terminal-dot dot-red"></div>
+                                <div class="terminal-dot dot-yellow"></div>
+                                <div class="terminal-dot dot-green"></div>
+                            </div>
+                            <span class="ml-4 text-sm text-gray-400 code-font">platforms.py</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-4 text-yellow-400 code-font">"platforms": [</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-tag skill-platform px-4 py-2 rounded-lg text-sm code-font">"Windows"</span>
+                                <span class="skill-tag skill-platform px-4 py-2 rounded-lg text-sm code-font">"MacOS"</span>
+                            </div>
+                            <div class="mt-2 text-yellow-400 code-font">]</div>
+                        </div>
+                    </div>
+                    <div class="terminal-window card-hover">
+                        <div class="terminal-header">
+                            <div class="terminal-dots">
+                                <div class="terminal-dot dot-red"></div>
+                                <div class="terminal-dot dot-yellow"></div>
+                                <div class="terminal-dot dot-green"></div>
+                            </div>
+                            <span class="ml-4 text-sm text-gray-400 code-font">soft_skills.py</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-4 text-purple-400 code-font">"soft_skills": [</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-tag skill-soft text-white px-4 py-2 rounded-lg text-sm code-font">"Team Leadership"</span>
+                                <span class="skill-tag skill-soft text-white px-4 py-2 rounded-lg text-sm code-font">"Communication"</span>
+                                <span class="skill-tag skill-soft text-white px-4 py-2 rounded-lg text-sm code-font">"Creative Direction"</span>
+                                <span class="skill-tag skill-soft text-white px-4 py-2 rounded-lg text-sm code-font">"Time Management"</span>
+                            </div>
+                            <div class="mt-2 text-purple-400 code-font">]</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-8">
+                <div class="text-2xl python-gradient-text code-font">}</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20" style="background-color: var(--bg-dark);">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 python-gradient-text code-font">class Experience:</h2>
+            <div class="max-w-4xl mx-auto space-y-8">
+                <div class="terminal-window card-hover">
+                    <div class="terminal-header">
+                        <div class="terminal-dots">
+                            <div class="terminal-dot dot-red"></div>
+                            <div class="terminal-dot dot-yellow"></div>
+                            <div class="terminal-dot dot-green"></div>
+                        </div>
+                        <span class="ml-4 text-sm text-gray-400 code-font">first_economy.py</span>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex flex-col lg:flex-row lg:justify-between lg:items-center mb-4">
+                            <div>
+                                <h3 class="text-2xl font-bold text-blue-400 code-font">Lead Motion Designer & Visualizer</h3>
+                                <p class="text-lg text-gray-300 code-font">First Economy</p>
+                            </div>
+                            <span class="text-sm bg-blue-900 text-blue-300 px-3 py-1 rounded-lg code-font">2022–Present</span>
+                        </div>
+                        <div class="code-font text-sm space-y-2">
+                            <div class="syntax-comment"># Key Achievements:</div>
+                            <div class="flex items-start">
+                                <span class="text-green-400 mr-3">✓</span>
+                                <span>Led team of 9 designers, created SOPs, automated render queue using PowerShell + Excel</span>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="text-green-400 mr-3">✓</span>
+                                <span>Integrated AI tools like Runway & ChatGPT for 30% faster workflows</span>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="text-green-400 mr-3">✓</span>
+                                <span>Worked with Godrej, GOQii, Royale Touche, Welspun, Parineeta Group</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="terminal-window card-hover">
+                    <div class="terminal-header">
+                        <div class="terminal-dots">
+                            <div class="terminal-dot dot-red"></div>
+                            <div class="terminal-dot dot-yellow"></div>
+                            <div class="terminal-dot dot-green"></div>
+                        </div>
+                        <span class="ml-4 text-sm text-gray-400 code-font">mio_design.py</span>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex flex-col lg:flex-row lg:justify-between lg:items-center mb-4">
+                            <div>
+                                <h3 class="text-2xl font-bold text-blue-400 code-font">Animator & Motion Designer</h3>
+                                <p class="text-lg text-gray-300 code-font">MIO Design</p>
+                            </div>
+                            <span class="text-sm bg-blue-900 text-blue-300 px-3 py-1 rounded-lg code-font">2019–2021</span>
+                        </div>
+                        <div class="code-font text-sm space-y-2">
+                            <div class="syntax-comment"># Key Achievements:</div>
+                            <div class="flex items-start">
+                                <span class="text-green-400 mr-3">✓</span>
+                                <span>Created animations for KTM, ICICI Lombard, Jalesh Cruises</span>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="text-green-400 mr-3">✓</span>
+                                <span>Streamlined storytelling with clean visuals and client appreciation</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="terminal-window card-hover">
+                    <div class="terminal-header">
+                        <div class="terminal-dots">
+                            <div class="terminal-dot dot-red"></div>
+                            <div class="terminal-dot dot-yellow"></div>
+                            <div class="terminal-dot dot-green"></div>
+                        </div>
+                        <span class="ml-4 text-sm text-gray-400 code-font">prism_jewellery.py</span>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex flex-col lg:flex-row lg:justify-between lg:items-center mb-4">
+                            <div>
+                                <h3 class="text-2xl font-bold text-blue-400 code-font">Executive & Programmer / Graphic Designer</h3>
+                                <p class="text-lg text-gray-300 code-font">Prism Jewellery</p>
+                            </div>
+                            <span class="text-sm bg-blue-900 text-blue-300 px-3 py-1 rounded-lg code-font">2014–2019</span>
+                        </div>
+                        <div class="code-font text-sm space-y-2">
+                            <div class="syntax-comment"># Key Achievements:</div>
+                            <div class="flex items-start">
+                                <span class="text-green-400 mr-3">✓</span>
+                                <span>Executive & Programmer (2017–2019): Excel macros for automation and visual concepts</span>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="text-green-400 mr-3">✓</span>
+                                <span>Graphic Designer (2014–2017): Product photography, retouching, print & digital work</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20" style="background-color: var(--bg-darker);">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 python-gradient-text code-font">featured_projects = [</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="terminal-window card-hover">
+                    <div class="terminal-header">
+                        <div class="terminal-dots">
+                            <div class="terminal-dot dot-red"></div>
+                            <div class="terminal-dot dot-yellow"></div>
+                            <div class="terminal-dot dot-green"></div>
+                        </div>
+                        <span class="ml-4 text-sm text-gray-400 code-font">
